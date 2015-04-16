@@ -16,11 +16,11 @@
 
 *Example*
 
-  (myvenv) student@adminuser-VirtualBox:~/workspace > pip install django==1.8
-  Downloading/unpacking django==1.8
-  Installing collected packages: django
-  Successfully installed django
-  Cleaning up...
+    (myvenv) student@adminuser-VirtualBox:~/workspace > pip install django==1.8
+    Downloading/unpacking django==1.8
+    Installing collected packages: django
+    Successfully installed django
+    Cleaning up...
 
 - Start a new Django project
   - You can replace `mysite` with whatever you want to call it.  Just don't forget!
@@ -34,7 +34,7 @@
   
 *Example*
 
-  INSTALLED_APPS = (
+    INSTALLED_APPS = (
       'django.contrib.admin',
       'django.contrib.auth',
       'django.contrib.contenttypes',
@@ -42,7 +42,7 @@
       'django.contrib.messages',
       'django.contrib.staticfiles',
       'store',
-  )
+    )
 
 - Start the local server 
   - If you want, you can leave your server running in one tab and do other things in the terminal in a new/different tab!  Just make sure you're in the right directory and you have started virtualenv.
