@@ -34,17 +34,17 @@
     - `<h1></h1>`, `<h2></h2>`, `<h3></h3>` etc
 
 *Example*
-  <html>
-    <head>
-      <title>The Coolest Store</title>
-    </head>
-    <body>
-      <h1>MY BIG TITLE! </h1>
-      ... some stuff here ...
-      <h2>My first subheading</h2>
-      This heading will be smaller than the h1 heading.
-    </body>
-  </html>
+    <html>
+      <head>
+        <title>The Coolest Store</title>
+      </head>
+      <body>
+        <h1>MY BIG TITLE! </h1>
+        ... some stuff here ...
+        <h2>My first subheading</h2>
+        This heading will be smaller than the h1 heading.
+      </body>
+    </html>
 
 - Line breaks, paragraphs, and divs
   - Line breaks and paragraphs are the appropriate ways to make space in your webpage.
