@@ -15,6 +15,7 @@
   - Install Django using pip
 
 *Example*
+
   (myvenv) student@adminuser-VirtualBox:~/workspace > pip install django==1.8
   Downloading/unpacking django==1.8
   Installing collected packages: django
@@ -34,13 +35,13 @@
 *Example*
 
   INSTALLED_APPS = (
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'store',
+      'django.contrib.admin',
+      'django.contrib.auth',
+      'django.contrib.contenttypes',
+      'django.contrib.sessions',
+      'django.contrib.messages',
+      'django.contrib.staticfiles',
+      'store',
   )
 
 - Start the local server 
