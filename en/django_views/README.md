@@ -64,3 +64,6 @@
     def inventory_list(request):
     
       return render(request, 'store/inventory_list.html', {})
+      
+- Create the view that your `store/views.py` function points at, in the indicated location
+  - For the example above, you will create a file named `inventory_list.html` in the `store` directory.  You can leave it blank or [Add HTML](html/README.md)
