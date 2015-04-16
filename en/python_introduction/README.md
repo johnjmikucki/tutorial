@@ -69,6 +69,13 @@
     X is 55
     >>> len("Hello world")
     11
+    
+- Escaped strings
+	- Escaped strings start with a `\` and are used to indicate when a character doesn't do what it would normally do in that context
+	- `\n` : In a string `n` would just be the letter n, but `\n` is special and means `newline`.
+	- `\\` : In a string `\` is usually used to indicate an escaped character, but if you actually want the `\`, literally, in the string, you escape the escaped character!
+	- `\"` : The symbol `"` would normally end a string, but if you actually want to include it literally in the string, you can escape it
+	- `\'` : Works just like `\"` but for `'` instead
 
 - Print out a value
 	- In the interpreter you can just type the value
@@ -212,3 +219,14 @@ or
     I like cats
     I like dogs
     I like bunnies
+    
+- Functions
+  - To create your own function:
+  	- Function definitions always start with `def` + name + `(` + any parameters you need + `):`
+  	- All lines that are inside the function must be indented using tab, or a certain number of spaces.  It's your choice, but it has to be consistent in all of your code!
+ 
+*Example*
+
+	def hello():
+	  print("Hello world!")
+	  print(":)")
