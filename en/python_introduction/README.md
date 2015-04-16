@@ -20,7 +20,7 @@
     >>> 
 
 - Run a Python script from the terminal
-	- ```python3 <path to file>```
+	- `python3 <path to file>`
 
 *Example*
 
@@ -29,9 +29,17 @@
 
 
 - Set up virtualenv
+	- Install Python-virtualenv if you haven't already
+		- `student@adminuser-VirtualBox:~/workspace > sudo apt-get install python-virtualenv`
+	- Create a new virtualenv.  Substitute `myvenv` for whatever you want to name your environment
+		- `student@adminuser-VirtualBox:~/workspace > virtualenv --python=python3.4 myvenv`
+
+- Start the virtualenv
+	- `student@adminuser-VirtualBox:~/workspace > source myvenv/bin/activate`
+		- **NOTE** Remember to replace `myvenv` with whatever you decided to name your virtualenv
 
 - Assign a variable
-	- ```<variable> = <value>```
+	- `<variable> = <value>`
 
 *Example*
     
@@ -40,13 +48,13 @@
 
 - Manipulate strings
 	- Double quotes
-		- ```"Hello world"```
+		- `"Hello world"`
 	- Single quotes
-		- ```'Hello world'```
+		- `'Hello world'`
 	- Get string length
-		- ```len(<string>)```
-	- Convert other things to strings with the ```str()``` function
-	- Concatenate (add two strings together) with ```+```
+		- `len(<string>)`
+	- Convert other things to strings with the `str()` function
+	- Concatenate (add two strings together) with `+`
 
 *Example*
 
@@ -64,9 +72,9 @@
 
 - Print out a value
 	- In the interpreter you can just type the value
-		- ```>>> x```
+		- `>>> x`
 	- Use a print statement
-		- ```>>> print(x)```
+		- `>>> print(x)`
 
 *Example*
 
@@ -80,12 +88,12 @@
     >>> print ("X is " + str(x))
     X is 7
 
-- Boolean values (```True``` and ```False```)
+- Boolean values (`True` and `False`)
 	- Remember they have to start with a capital letter
 	- Will also get boolean values from comparisons
-	- "Is it equal?" uses the symbol ```==```
-	- "Is it not equal?" uses the symbol ```!=``` where ```!``` usually means "not"
-	- **IMPORTANT** To check if two values are equal you must use **two** equal signs, not one: **YES:** ```==``` **NO:** ```=``` because one ```=``` is how you assign a value to a variable.
+	- "Is it equal?" uses the symbol `==`
+	- "Is it not equal?" uses the symbol `!=` where ```!``` usually means "not"
+	- **IMPORTANT** To check if two values are equal you must use **two** equal signs, not one: **YES:** `==` **NO:** `=` because one `=` is how you assign a value to a variable.
 
 *Example*
     
@@ -103,14 +111,14 @@
     True
     
 - Manipulate lists
-	- Lists are in square brackets like ```[ ]```
-	- An empty list: ```[]```
-	- A list can have lots of things in it: ```["apple", 5, -2]```
-	- Save it to a variable: my_list = ```["uno", "dos", 8, 4]```
-	- Lists have a length: ```len(<your list>)```
-	- Add to the list: ```my_list.append(<value>)```
-	- Look at a specific item in the list: ```my_list[2]``` will be 8
-		- **IMPORTANT** Remember the first item in a list is number ```0```, not number ```1```
+	- Lists are in square brackets like `[ ]`
+	- An empty list: `[]`
+	- A list can have lots of things in it: `["apple", 5, -2]`
+	- Save it to a variable: my_list = `["uno", "dos", 8, 4]`
+	- Lists have a length: `len(<your list>)`
+	- Add to the list: `my_list.append(<value>)`
+	- Look at a specific item in the list: `my_list[2]` will be 8
+		- **IMPORTANT** Remember the first item in a list is number `0`, not number `1`
 
 *Example*
 
@@ -130,8 +138,8 @@
     ['uno', 'dos', 8, 4, 'last']
 
 - Manipulate dictionaries
-	- Uses curly braces: ```{ }```
-	- Always a ```name: value``` pair
+	- Uses curly braces: `{ }`
+	- Always a `name: value` pair
 	- Manipulated a lot like lists except you use the name of the dictionary entry instead of the index number
 
 *Example*
