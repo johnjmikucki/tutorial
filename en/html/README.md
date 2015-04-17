@@ -22,10 +22,10 @@
 
     <html>
       <head>
-        <title>The Coolest Store</title>
+        <title>THE WORLD'S BEST CATS</title>
       <head>
       <body>
-        Hello world!
+        Hello world!  Come meet some fluffy cats!
       </body>
     </html>
 
@@ -37,12 +37,12 @@
 
     <html>
       <head>
-        <title>The Coolest Store</title>
+        <title>THE WORLD'S BEST CATS</title>
       </head>
       <body>
-        <h1>MY BIG TITLE! </h1>
+        <h1>My Favorite Cat</h1>
         ... some stuff here ...
-        <h2>My first subheading</h2>
+        <h2>My Favorite Cat's Favorite Things</h2>
         This heading will be smaller than the h1 heading.
       </body>
     </html>
@@ -58,7 +58,7 @@
 
     <html>
       <head>
-        <title>The Coolest Store</title>
+        <title>THE WORLD'S BEST CATS</title>
       </head>
       <body>
         <div>
@@ -99,19 +99,19 @@
 
     <html>
       <head>
-        <title>The Coolest Store</title>
+        <title>THE WORLD'S BEST CATS</title>
       </head>
       <body>
         <ul>
-          <li>Item one</li>
-          <li>Item two</li>
-          <li Item three</li>
+          <li>Cat one</li>
+          <li>Cat two</li>
+          <li>Cat three</li>
         </ul>
       </body>
     </html>
 
 ## Next Steps ##
-- Use what you've learned to build out your views (such as `store/templates/store/inventory_list.html`)
+- Use what you've learned to build out your views (such as `cat_shelter/templates/cat_shelter/current_cats.html`)
   - Wrap the whole page in `<html></html>` tags
   - Create a head with a title for your page
   - Create a body with headings, paragraphs, line breaks, divs, lists, links, or whatever!
