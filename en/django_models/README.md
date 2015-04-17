@@ -2,11 +2,11 @@
 
 ## What is it? ##
 
-- The way we represent things (called "objects") that we want to keep in the database
-- Each model object will have properties which store information about the object (things like `name`, `date`, `description`, etc)
-- Each model may have methods which act on the object (`print`, `set_name`, `buy`, `apply_discount`, etc)
+- Models represent things (called "objects") that we want to keep in the database.
+- Models describe objects *attributes* -- information about the object (e.g. `name`, `date`, `description`)
+- Models describe objects' *methods* -- behaviors related to the object (`print`, `set_name`, `buy`, `apply_discount`, etc)
 
-## HowTo ##
+## Next Steps ##
 
 - Set up a model
   // TODO what kind of model do we want to use for the tutorial?

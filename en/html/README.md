@@ -8,7 +8,7 @@
 - You'll put this stuff in the `html` file for your views to change how they look!
 - Unlike Python, the indentation for html is not **required** but it's a good idea to use it to make your files easier to read.
 
-## HowTo ##
+## Notes ##
 
 - Basic layout of html page
   - HTML pages always start and end with an HTML tag
@@ -110,7 +110,8 @@
       </body>
     </html>
 
-- Use this stuff to put stuff in your views (such as `store/templates/store/inventory_list.html`)
+## Next Steps ##
+- Use what you've learned to build out your views (such as `store/templates/store/inventory_list.html`)
   - Wrap the whole page in `<html></html>` tags
   - Create a head with a title for your page
   - Create a body with headings, paragraphs, line breaks, divs, lists, links, or whatever!

@@ -6,7 +6,9 @@
 - Allows for object-oriented design
 - We are using Python 3.4.0
 
-## HowTo ##
+## Notes / Next Steps ##
+
+- If you are not familiar with Python, we recommend you do some of the examples below.  Typing it really does help you learn it!
 
 - Open the interpreter
 	- Call ```python3``` from any directory in your terminal
@@ -69,13 +71,6 @@
     X is 55
     >>> len("Hello world")
     11
-    
-- Escaped strings
-	- Escaped strings start with a `\` and are used to indicate when a character doesn't do what it would normally do in that context
-	- `\n` : In a string `n` would just be the letter n, but `\n` is special and means `newline`.
-	- `\\` : In a string `\` is usually used to indicate an escaped character, but if you actually want the `\`, literally, in the string, you escape the escaped character!
-	- `\"` : The symbol `"` would normally end a string, but if you actually want to include it literally in the string, you can escape it
-	- `\'` : Works just like `\"` but for `'` instead
 
 - Print out a value
 	- In the interpreter you can just type the value
@@ -145,8 +140,9 @@
     ['uno', 'dos', 8, 4, 'last']
 
 - Manipulate dictionaries
-	- Uses curly braces: `{ }`
-	- Always a `name: value` pair
+    - Remember: a dictionary lets you associate keys/names with values.
+	- Uses curly braces: ```{ }```
+	- Always a ```name: value``` pair
 	- Manipulated a lot like lists except you use the name of the dictionary entry instead of the index number
 
 *Example*
@@ -200,6 +196,7 @@ or
 
 - For loop
 	- For each one of a thing, do the thing underneath
+	- Remember, the 'range' function is a convenient way to make lists of numbers
 
 *Example*
 
@@ -228,5 +225,5 @@ or
 *Example*
 
 	def hello():
-	  print("Hello world!")
+	  print("Hello world! ")
 	  print(":)")
