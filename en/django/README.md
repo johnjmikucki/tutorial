@@ -6,7 +6,7 @@
 - Can be used to build scaffolding (basically mostly-empty starter files) for a new web application
 - Invisibly handles a lot of the data movement that needs to happen to move and update stuff in the database.
 
-## HowTo ##
+## Next Steps ##
 
 - **NOTE** From here on out, anything you call from the command line must be called with the virtualenv running.  If you do not see `(myvenv)` (or `(whatever you named it)`) at the beginning of your command line prompt, go back and start virtualenv
 
@@ -47,4 +47,4 @@
 - Start the local server 
   - If you want, you can leave your server running in one tab and do other things in the terminal in a new/different tab!  Just make sure you're in the right directory and you have started virtualenv.
   - `(myvenv) student@adminuser-VirtualBox:~/workspace > python manage.py runserver`
-  - You can look at your website at [http://127.0.0.1:8000/]
+  - You can look at your website at http://127.0.0.1:8000/

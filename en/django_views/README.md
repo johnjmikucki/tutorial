@@ -18,6 +18,8 @@
   - `*` : repeat zero or more times
   - `?` : repeat zero or one times
 
+## Next Steps ##
+
 - Add a reference to your **application** URLs in your **site** URLs
   - This means when certain kinds of requests come into your site (`mysite`), they will get sent to your application (`store`) for more instructions.
   - Open `mysite/urls.py`
@@ -66,9 +68,7 @@
     
       return render(request, 'store/inventory_list.html', {})
       
-## Next Steps ## 
 - Create the view that your `store/views.py` function points at, in the indicated location
-  - These views will be called "templates".  Create a "templates" directory in your `store` directory.
-  - It is a convention in Django for some reason to create a directory inside the `templates` directory for your app (even though your templates directory is already inside a directory for your app.  Whatever.)
-    - Under `templates` (which is under `store`) make another directory called `store`
+  - Create `store/templates` and `store/templates/store` directories. 
+  - Django convention is to create a directory inside the `templates` directory for your app (even though your templates directory is already inside a directory for your app.  Whatever.)
   - For the example above, you will create a file named `inventory_list.html` in the `store/templates/store` directory.  You can leave it blank or [Add HTML](html/README.md)

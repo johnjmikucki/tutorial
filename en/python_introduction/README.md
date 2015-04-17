@@ -6,7 +6,9 @@
 - Allows for object-oriented design
 - We are using Python 3.4.0
 
-## HowTo ##
+## Notes / Next Steps ##
+
+- If you are not familiar with Python, we recommend you do some of the examples below.  Typing it really does help you learn it!
 
 - Open the interpreter
 	- Call ```python3``` from any directory in your terminal
