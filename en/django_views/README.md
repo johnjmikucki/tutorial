@@ -5,7 +5,7 @@
 - What you actually **see** when you visit a webpage
 - Can be written in any of a combination of several things including html, javascript, CSS, etc.
 - Can be static (always the same) or dynamic (changes based on other stuff, like what's in the database, or what you clicked on, or what time it is, etc.)
-- A request comes into your site (`mysite`), your site forwards it to the proper application (`store`), and the application decides what the view/webpage should look like.
+- A request comes into your site (`critters_site`), your site forwards it to the proper application (`cat_shelter`), and the application decides what the view/webpage should look like.
 
 ## Notes ##
 
@@ -21,13 +21,13 @@
 ## Next Steps ##
 
 - Add a reference to your **application** URLs in your **site** URLs
-  - This means when certain kinds of requests come into your site (`mysite`), they will get sent to your application (`store`) for more instructions.
-  - Open `mysite/urls.py`
+  - This means when certain kinds of requests come into your site (`critters_site`), they will get sent to your application (`cat_shelter`) for more instructions.
+  - Open `critters_site/urls.py`
   - Add a URL entry pointing to your store.urls.  Use `r` to specify when the site should use that app
-    - Adding the store.urls using this `r` will forward **all** requests to your store app.  Basically saying "If I get any request, look for instructions `here`."
-      - `url(r'', include('store.urls')),`
-    - Adding the store.urls using this `r` will forward requests that start with `coolstore` to the store app. asically saying "If I get a request like <mywebsite>/coolstore/..., look for instructions `here`."
-      - `url(r'^coolstore', include('store.urls')),`
+    - Adding the cat_shelter.urls using this `r` will forward **all** requests to your store app.  Basically saying "If I get any request, look for instructions `here`."
+      - `url(r'', include('cat_shelter.urls')),`
+    - Adding the `cat_shelter.urls` using this `r` will forward requests that start with `kitties` to the `cat_shelter` app. asically saying "If I get a request like `http://127.0.0.1:8000/kitties/...`, look for instructions `here`."
+      - `url(r'^kitties', include('cat_shelter.urls')),`
 
 *Example*
 
@@ -36,18 +36,18 @@
     
     urlpatterns = [
       url(r'^admin/', include(admin.site.urls)),
-      url(r'', include('blog.urls')),
+      url(r'', include('cat_shelter.urls')),
     ]
     
 - Add application-specific instructions into your **application** URLs
-  - When the site `mysite` forwards requests to our application `store`, what should we do with them?
-  - Open `store/urls.py`
+  - When the site `critters_site` forwards requests to our application `cat_shelter`, what should we do with them?
+  - Open `cat_shelter/urls.py`
   - Add a URL entry for your view.  Use `r` to specify when the application should use that view.
-    - Adding the `inventory_list` using this `r` will use the `inventory_list` view for empty strings--when you specify no path in the request.
-      - `url(r'^$', views.inventory_list),`
+    - Adding the `current_cats` using this `r` will use the `current_cats` view for empty strings--when you specify no path in the request.
+      - `url(r'^$', views.current_cats),`
       - `r'^$'` : `^` is beginning and `$` is end so `^$` is "nothing between beginning and end"
-    - Adding the `inventory_list` using this `r` will use the `inventory_list` view for the request `list`
-       `url(r'^list$', views.inventory_list),`
+    - Adding the `current_cats` using this `r` will use the `current_cats` view for the request `current`
+       `url(r'^current$', views.current_cats),`
 
 *Example*
 
@@ -55,20 +55,20 @@
     from . import views
     
     urlpatterns = [
-        url(r'^$', views.inventory_list),
+        url(r'^$', views.current_cats),
     ]
 
 - Create a function to call your view
-  - Open `store/views.py`
-    - Add a basic function corresponding to your view (such as `inventory_list`)
+  - Open `cat_shelter/views.py`
+    - Add a basic function corresponding to your view (such as `current_cats`)
 
 *Example*
 
-    def inventory_list(request):
+    def current_cats(request):
     
-      return render(request, 'store/inventory_list.html', {})
+      return render(request, 'cat_shelter/current_cats.html', {})
       
-- Create the view that your `store/views.py` function points at, in the indicated location
-  - Create `store/templates` and `store/templates/store` directories. 
+- Create the view that your `cat_shelter/views.py` function points at, in the indicated location
+  - Create `cat_shelter/templates` and `cat_shelter/templates/cat_shelter` directories. 
   - Django convention is to create a directory inside the `templates` directory for your app (even though your templates directory is already inside a directory for your app.  Whatever.)
-  - For the example above, you will create a file named `inventory_list.html` in the `store/templates/store` directory.  You can leave it blank or [Add HTML](html/README.md)
+  - For the example above, you will create a file named `current_cats.html` in the `cat_shelter/templates/cat_shelter` directory.  You can leave it blank or [Add HTML](html/README.md)
