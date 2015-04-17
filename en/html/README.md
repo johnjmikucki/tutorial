@@ -115,3 +115,28 @@
   - Wrap the whole page in `<html></html>` tags
   - Create a head with a title for your page
   - Create a body with headings, paragraphs, line breaks, divs, lists, links, or whatever!
+
+*Example*
+
+    <html>
+      <head>
+        <title>Kitty Kastle</title>
+      </head>
+      <body>
+        <div>
+          <h1><a href="">Tara's Kitty Kastle!</a></h1>
+        </div>
+        <div>
+          <h2><a href="">Zelda</a></h2>
+          <p>Age: 2</p>
+          <p>Fluffy: no</p>
+          <p>Zelda likes to chase laser pointers and be scratched on her head.  She is most happy if she is allowed to sleep on your bed.  She will sit in your lap if you have a blanket.</p>
+        </div>
+        <div>
+          <h2><a href="">Toothless</a></h2>
+          <p>Age: 1</p>
+          <p>Fluffy: yes</p>
+          <p>Toothless loves to snuggle and play and be petted.  He will chase anything that moves.  He likes to knock stuff off shelves.  He loves to sit in the window.  His favorite food is pizza.</p>
+        </div>
+      </body>
+    </html>
