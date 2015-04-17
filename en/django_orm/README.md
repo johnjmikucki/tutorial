@@ -11,30 +11,29 @@
 - Open the console
   - `(myvenv) student@adminuser-VirtualBox:~/workspace > python manage.py shell`
   - Don't forget to import any models you want to manipulate
-    - `>>> from store.models import Item`
+    - `>>> from store.models import Cat`
 - List all of a model object
-  - `<MODEL NAME>.objects.all()`
-    - `>>> Item.objects.all()`
+  - `Cat.objects.all()`
 - Get a specific object and save it to a variable
-  - `<VARIABLE> = <MODEL NAME>.objects.get(<ATTRIBUTE>=<value>)`
-  - `>>> myItem = Item.objects.get(name="banana")`
+  - `thiscat = Cat.objects.get(name="Zelda")`
 - Create a new item in the database
-  - `<MODEL>.objects.create(<LIST OF ATTRIBUTES>)`
-  -  //TODO need to figure the model out first...
+  - `Cat.objects.create(name="Toothless", age=1, color="black", fluffy=True, desc="Toothless is made of snuggles and likes to knock things over")`
 -  Filtering queries
-  -  `<MODEL>.objects.filter(<CRITERIA>)`
-  -  //Figure out the model first...
+  -  `Cat.objects.filter(adopted__lte=timezone.now())`
+  -  `Cat.objects.filter(fluffy=True)`
 -Change the order of query results
-  - `<MODEL>.objects.order_by(<CRITERIA>)`
-  - //Figure out the model
+  - `Cat.objects.order_by('name')`
+  - `Cat.objects.order_by('-age')`
 - Make query results available to your view
-  - Open `store/views.py`
+  - Open `cat_shelter/views.py`
   - In the function for the view you are interested in:
     - Add the query and save it to a variable
-      - //Figure out the model sigh.
+      - `mycats = Cat.objects.all().order_by('age')`
     - Give the variable a name and pass it to the html like a dictionary
-      - //Figure out model
+      - `'mycats' : theCats`
 
 *Example*
 
-//TODO
+    def current_cats(request):
+      theCats = Cat.objects.all().order_by('age')
+      return render(request, 'cat_shelter/current_cats.html', {'mycats' : theCats})
