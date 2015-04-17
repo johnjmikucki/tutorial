@@ -24,13 +24,13 @@
 
 - Start a new Django project
   - You can replace `mysite` with whatever you want to call it.  Just don't forget!
-  - `(myvenv) student@adminuser-VirtualBox:~/workspace > django-admin startproject mysite .`
+  - `(myvenv) student@adminuser-VirtualBox:~/workspace > django-admin startproject critters_site .`
   - The `.` is **VERY IMPORTANT**.  It tells Django to make the new website in your current directory.
 
 - Start a new Django app
-  - You can replace `store` with whatever you want to call it.  Just don't forget!
-  - `(myvenv) student@adminuser-VirtualBox:~/workspace > python manage.py startapp store`
-  - Add your new app to the settings for your site, in `mysite/settings.py`
+  - You can replace `cat_shelter` with whatever you want to call it.  Just don't forget!
+  - `(myvenv) student@adminuser-VirtualBox:~/workspace > python manage.py startapp cat_shelter`
+  - Add your new app to the settings for your site, in `critters_site/settings.py`
   
 *Example*
 
@@ -41,7 +41,7 @@
       'django.contrib.sessions',
       'django.contrib.messages',
       'django.contrib.staticfiles',
-      'store',
+      'cat_shelter',
     )
 
 - Start the local server 
