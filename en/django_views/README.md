@@ -1,15 +1,16 @@
 # Django Views #
 
-## What is it? ##
+## What is a View? ##
 
 - What you actually **see** when you visit a webpage
 - Can be written in any of a combination of several things including html, javascript, CSS, etc.
 - Can be static (always the same) or dynamic (changes based on other stuff, like what's in the database, or what you clicked on, or what time it is, etc.)
 - A request comes into your site (`mysite`), your site forwards it to the proper application (`store`), and the application decides what the view/webpage should look like.
 
-## HowTo ##
+## Notes ##
 
 - Important regex things to know
+  - What's a Regex?  A Regular Expression - matches strings against patterns.
   - `^` : the beginning
   - `$` : the end
   - `\d` : a digit
@@ -65,6 +66,7 @@
     
       return render(request, 'store/inventory_list.html', {})
       
+## Next Steps ## 
 - Create the view that your `store/views.py` function points at, in the indicated location
   - These views will be called "templates".  Create a "templates" directory in your `store` directory.
   - It is a convention in Django for some reason to create a directory inside the `templates` directory for your app (even though your templates directory is already inside a directory for your app.  Whatever.)

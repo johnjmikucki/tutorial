@@ -47,4 +47,4 @@
 - Start the local server 
   - If you want, you can leave your server running in one tab and do other things in the terminal in a new/different tab!  Just make sure you're in the right directory and you have started virtualenv.
   - `(myvenv) student@adminuser-VirtualBox:~/workspace > python manage.py runserver`
-  - You can look at your website at `http://127.0.0.1:8000/`
+  - You can look at your website at [http://127.0.0.1:8000/]
