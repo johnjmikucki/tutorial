@@ -28,6 +28,8 @@
         Hello world!  Come meet some fluffy cats!
       </body>
     </html>
+	
+![Basic Layout](images/basic_layout.png)
 
 - Adding a heading
   - Use the heading tags for headers and subheaders
@@ -46,6 +48,8 @@
         This heading will be smaller than the h1 heading.
       </body>
     </html>
+	
+![Add a Heading](images/add_a_heading.png)
 
 - Line breaks, paragraphs, and divs
   - Line breaks and paragraphs are the appropriate ways to make space in your webpage.
@@ -82,6 +86,7 @@
       </body>
     </html>
   
+  ![Line Breaks](images/line_breaks_paragraphs_and_divs.png)
 
 - Links
   - `<a href="THE URL FOR YOUR LINK GOES HERE!">Text for your link goes here!</a>`
@@ -109,6 +114,8 @@
         </ul>
       </body>
     </html>
+	
+![Lists](images/lists.png)
 
 ## Next Steps ##
 - Use what you've learned to build out your views (such as `cat_shelter/templates/cat_shelter/current_cats.html`)
@@ -140,3 +147,5 @@
         </div>
       </body>
     </html>
+
+![Sample View](images/sample_view.png)
