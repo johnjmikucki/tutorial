@@ -12,3 +12,4 @@
 * [Appendix A: Deploy with Heroku](deploy/README.md)
 * [Appendix B: CSS](css/README.md)
 * [Appendix C: Get Crazy with Templates](template_extending/README.md)
+* [Appendix D: Django Forms](django_forms/README.md)

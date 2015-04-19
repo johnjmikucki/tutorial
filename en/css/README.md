@@ -14,7 +14,7 @@ It was written by programmers who worked for Twitter and is now developed by vol
 
 ## Install Bootstrap
 
-To install Bootstrap, you need to add this to your `<head>` in your `.html` file (`blog/templates/blog/post_list.html`):
+To install Bootstrap, you need to add this to your `<head>` in your `.html` file (`cat_shelter/templates/blog/current_cats.html`):
 
 ```
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -36,13 +36,13 @@ CSS is a static file, so in order to customize CSS, we need to first configure s
 
 ### Configure static files in Django
 
-First, we need to create a directory to store our static files in. Go ahead and create a directory called `static` inside your `djangogirls` directory.
+First, we need to create a directory to store our static files in. Go ahead and create a directory called `static` inside your `workspace` directory.
 
-    djangogirls
+    workspace
     ├─── static
     └─── manage.py
 
-Open up the `mysite/settings.py` file, scroll to the bottom of it and add the following lines:
+Open up the `critter_site/settings.py` file, scroll to the bottom of it and add the following lines:
 
 ```
 STATICFILES_DIRS = (
@@ -54,19 +54,19 @@ This way Django will know where to find your static files.
 
 ## Your first CSS file!
 
-Let's create a CSS file now, to add your own style to your web-page. Create a new directory called `css` inside your `static` directory. Then create a new file called `blog.css` inside this `css` directory. Ready?
+Let's create a CSS file now, to add your own style to your web-page. Create a new directory called `css` inside your `static` directory. Then create a new file called `cat_shelter.css` inside this `css` directory. Ready?
 
     static
     └─── css
-            blog.css
+            cat_shelter.css
 
-Time to write some CSS! Open up the `static/css/blog.css` file in your code editor.
+Time to write some CSS! Open up the `static/css/cat_shelter.css` file in your code editor.
 
 We won't be going too deep into customizing and learning about CSS here, because it's pretty easy and you can learn it on your own after this workshop. We really recommend doing this [Codeacademy HTML & CSS course](http://www.codecademy.com/tracks/web) to learn everything you need to know about making your websites more pretty with CSS.
 
 But let's do at least a little. Maybe we could change the color of our header? To understand colors, computers use special codes. They start with `#` and are followed by 6 letters (A-F) and numbers (0-9). You can find color codes for example here: http://www.colorpicker.com/. You may also use [predefined colors](http://www.w3schools.com/cssref/css_colornames.asp), such as `red` and `green`.
 
-In your `static/css/blog.css` file you should add the following code:
+In your `static/css/cat_shelter.css` file you should add the following code:
 
 ```css
     h1 a {
@@ -84,7 +84,7 @@ In a CSS file we determine styles for elements in the HTML file. The elements ar
 
 Read about [CSS Selectors in w3schools](http://www.w3schools.com/cssref/css_selectors.asp).
 
-Then, we need to also tell our HTML template that we added some CSS. Open the `blog/templates/blog/post_list.html` file and add this line at the very beginning of it:
+Then, we need to also tell our HTML template that we added some CSS. Open the `cat_shelter/templates/cat_shelter/current_cats.html` file and add this line at the very beginning of it:
 
 `{% load staticfiles %}`
 
@@ -99,33 +99,41 @@ We just told our template where our CSS file is located.
 Your file should now look like this:
 
 ```html
-    {% load staticfiles %}
-    <html>
-        <head>
-            <title>Django Girls blog</title>
-            <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-            <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-            <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-        </head>
-        <body>
-            <div>
-                <h1><a href="/">Django Girls Blog</a></h1>
-            </div>
-
-            {% for post in posts %}
-                <div>
-                    <p>published: {{ post.published_date }}</p>
-                    <h1><a href="">{{ post.title }}</a></h1>
-                    <p>{{ post.text|linebreaks }}</p>
-                </div>
-            {% endfor %}
-        </body>
-    </html>
+{% load staticfiles %}
+<html>
+	<head>
+	<title>Kitty Kastle</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="{% static 'css/cat_shelter.css' %}">
+	</head>
+	<body>
+	<div>
+	  <h1><a href="">Tara's Kitty Kastle!</a></h1>
+	</div>
+	
+	{% for cat in mycats %}
+	  <div>
+	    <h2><a href="{%url 'cat_shelter.views.cat_detail' pk=cat.pk%}"> {{ cat.name }}</a></h2>
+	    <p>Age: {{ cat.age }}</p>
+	    <p>Fluffy: 
+	    {% if cat.fluffy %}
+	      Yep! 
+	    {% else %}
+	      Nope
+	    {% endif %}</p>
+	    <p>{{ cat.desc|linebreaks}}</p>
+	  </div>
+	{% endfor %}
+	
+	</body>
+</html>
 ```
 
 OK, save the file and refresh the site!
 
 ![Figure 14.2](images/color2.png)
+
+**NOTE** The names aren't colorized.  Hmm.  That's probably because they're header type `h2` instead of `h1`.  Change the CSS to select `h1 a, h2 a` instead of just `h1 a` to apply to both!
 
 Nice work! Maybe we would also like to give our website a little air and increase the margin on the left side? Let's try this!
 
@@ -139,7 +147,7 @@ Add this to your CSS, save the file and see how it works!
 
 ![Figure 14.3](images/margin2.png)
 
-Maybe we can customize the font in our header? Paste this into your `<head>` in `blog/templates/blog/post_list.html` file:
+Maybe we can customize the font in our header? Paste this into your `<head>` in `cat_shelter/templates/cat_shelter/current_cats.html` file:
 
 ```html
     <link href="http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
@@ -147,7 +155,7 @@ Maybe we can customize the font in our header? Paste this into your `<head>` in 
 
 This line will import a font called *Lobster* from Google Fonts (https://www.google.com/fonts).
 
-Now add the line `font-family: 'Lobster';` in the CSS file `static/css/blog.css` inside the `h1 a` declaration block (the code between the braces `{` and `}`)  and refresh the page:
+Now add the line `font-family: 'Lobster';` in the CSS file `static/css/cat_shelter.css` inside the `h1 a` declaration block (the code between the braces `{` and `}`)  and refresh the page:
 
 ```css
     h1 a {
@@ -167,21 +175,28 @@ Go ahead and name some parts of the HTML code. Add a class called `page-header` 
 
 ```html
     <div class="page-header">
-        <h1><a href="/">Django Girls Blog</a></h1>
+        <h1><a href="/">Tara's Kitty Kastle!</a></h1>
     </div>
 ```
 
-And now add a class `post` to your `div` containing a blog post.
+And now add a class `cat` to your `div` containing a cat description.
 
 ```html
-    <div class="post">
-        <p>published: {{ post.published_date }}</p>
-        <h1><a href="">{{ post.title }}</a></h1>
-        <p>{{ post.text|linebreaks }}</p>
-    </div>
+      <div class="cat">
+        <h2><a href="{%url 'cat_shelter.views.cat_detail' pk=cat.pk%}"> {{ cat.name }}</a></h2>
+        <p>Age: {{ cat.age }}</p>
+        <p>Fluffy:
+        {% if cat.fluffy %}
+          Yep!
+        {% else %}
+          Nope
+        {% endif %}</p>
+        <p>{{ cat.desc|linebreaks}}</p>
+      </div>
+
 ```
 
-We will now add declaration blocks to different selectors. Selectors starting with `.` relate to classes. There are many great tutorials and explanations about CSS on the Web to help you understand the following code. For now, just copy and paste it into your `djangogirls/static/css/blog.css` file:
+We will now add declaration blocks to different selectors. Selectors starting with `.` relate to classes. There are many great tutorials and explanations about CSS on the Web to help you understand the following code. For now, just copy and paste it into your `workspace/static/css/cat_shelter.css` file:
 
 ```css
     .page-header {
@@ -224,11 +239,11 @@ We will now add declaration blocks to different selectors. Selectors starting wi
         margin-right: 20px;
     }
 
-    .post {
+    .cat {
         margin-bottom: 70px;
     }
 
-    .post h1 a, .post h1 a:visited {
+    .cat h2 a, .post h2 a:visited {
         color: #000000;
     }
 ```
@@ -236,33 +251,43 @@ We will now add declaration blocks to different selectors. Selectors starting wi
 Then surround the HTML code which displays the posts with declarations of classes. Replace this:
 
 ```html
-    {% for post in posts %}
-        <div class="post">
-            <p>published: {{ post.published_date }}</p>
-            <h1><a href="">{{ post.title }}</a></h1>
-            <p>{{ post.text|linebreaks }}</p>
-        </div>
+    {% for cat in mycats %}
+      <div class="cat">
+        <h2><a href="{%url 'cat_shelter.views.cat_detail' pk=cat.pk%}"> {{ cat.name }}</a></h2>
+        <p>Age: {{ cat.age }}</p>
+        <p>Fluffy:
+        {% if cat.fluffy %}
+          Yep!
+        {% else %}
+          Nope
+        {% endif %}</p>
+        <p>{{ cat.desc|linebreaks}}</p>
+      </div>
     {% endfor %}
 ```
 
-in the `blog/templates/blog/post_list.html` with this:
+in the `cat_shelter/templates/cat_shelter/current_cats.html` with this:
 
 ```html
     <div class="content container">
         <div class="row">
             <div class="col-md-8">
                 {% for post in posts %}
-                    <div class="post">
-                        <div class="date">
-                            {{ post.published_date }}
-                        </div>
-                        <h1><a href="">{{ post.title }}</a></h1>
-                        <p>{{ post.text|linebreaks }}</p>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
+                  <div class="cat">
+                    <h2><a href="{%url 'cat_shelter.views.cat_detail' pk=cat.pk%}"> {{ cat.name }}</a></h2>
+                    <p>Age: {{ cat.age }}</p>
+                    <p>Fluffy:
+                   {% if cat.fluffy %}
+                     Yep!
+                   {% else %}
+                     Nope
+                   {% endif %}</p>
+                   <p>{{ cat.desc|linebreaks}}</p>
+                </div>
+              {% endfor %}
+          </div>
+      </div>
+  </div>
 ```
 
 Save those files and refresh your website.

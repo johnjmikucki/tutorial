@@ -14,7 +14,7 @@ But first, Heroku needs us to install a few packages. Go to your console with `v
 
     (myvenv) $ pip install dj-database-url gunicorn whitenoise
 
-After the installation is finished, go to the `djangogirls` directory and run this command:
+After the installation is finished, go to the `workspace` directory and run this command:
 
     (myvenv) $ pip freeze > requirements.txt
 
@@ -32,9 +32,9 @@ This line is needed for your application to work on Heroku.
 ## Procfile
 
 Another thing we need to create is a Procfile. This will let Heroku know which commands to run in order to start our website.
-Open up your code editor, create a file called `Procfile` in `djangogirls` directory and add this line:
+Open up your code editor, create a file called `Procfile` in `workspace` directory and add this line:
 
-    web: gunicorn mysite.wsgi
+    web: gunicorn critter_site.wsgi
 
 This line means that we're going to be deploying a `web` application, and we'll do that by running the command `gunicorn mysite.wsgi` (`gunicorn` is a program that's like a more powerful version of Django's `runserver` command).
 
@@ -42,15 +42,15 @@ Then save it. Done!
 
 ## The `runtime.txt` file
 
-We need to tell Heroku which Python version we want to use. This is done by creating a `runtime.txt` in the `djangogirls` directory using your editor's "new file" command, and putting the following text (and nothing else!) inside:
+We need to tell Heroku which Python version we want to use. This is done by creating a `runtime.txt` in the `workspace` directory using your editor's "new file" command, and putting the following text (and nothing else!) inside:
 
-    python-3.4.2
+    python-3.4.0
 
-## mysite/local_settings.py
+## `critter_site/local_settings.py`cp 
 
 There is a difference between settings we are using locally (on our computer) and settings for our server. Heroku is using one database, and your computer is using a different database. That's why we need to create a separate file for settings that will only be available for our local environment.
 
-Go ahead and create `mysite/local_settings.py` file. It should contain your `DATABASE` setup from your `mysite/settings.py` file. Just like that:
+Go ahead and create `critter_site/local_settings.py` file. It should contain your `DATABASE` setup from your `critter_site/settings.py` file. Just like that:
 
     import os
     BASE_DIR = os.path.dirname(os.path.dirname(__file__))
@@ -66,9 +66,9 @@ Go ahead and create `mysite/local_settings.py` file. It should contain your `DAT
 
 Then just save it! :)
 
-## mysite/settings.py
+## critter_site/settings.py
 
-Another thing we need to do is modify our website's `settings.py` file. Open `mysite/settings.py` in your editor and add the following lines at the end of the file:
+Another thing we need to do is modify our website's `settings.py` file. Open `critter_site/settings.py` in your editor and add the following lines at the end of the file:
 
     import dj_database_url
     DATABASES['default'] = dj_database_url.config()
@@ -86,13 +86,13 @@ Another thing we need to do is modify our website's `settings.py` file. Open `my
     except ImportError:
         pass
 
-It'll do necessary configuration for Heroku and also it'll import all of your local settings if `mysite/local_settings.py` exists.
+It'll do necessary configuration for Heroku and also it'll import all of your local settings if `critter_site/local_settings.py` exists.
 
 Then save the file.
 
-## mysite/wsgi.py
+## critter_site/wsgi.py
 
-Open the `mysite/wsgi.py` file and add these lines at the end:
+Open the `critter_site/wsgi.py` file and add these lines at the end:
 
     from whitenoise.django import DjangoWhiteNoise
     application = DjangoWhiteNoise(application)
@@ -105,9 +105,7 @@ You need to install your Heroku toolbelt which you can find here (you can skip t
 
 > When running the Heroku toolbelt installation program on Windows make sure to choose "Custom Installation" when being asked which components to install. In the list of components that shows up after that please additionally check the checkbox in front of "Git and SSH".
 
-> On Windows you also must run the following command to add Git and SSH to your command prompt's `PATH`: `setx PATH "%PATH%;C:\Program Files\Git\bin"`. Restart the command prompt program afterwards to enable the change.
-
-> After restarting your command prompt, don't forget to go to your `djangogirls` folder again and activate your virtualenv! (Hint: [Check the Django installation chapter](../django_installation/README.md#working-with-virtualenv))
+> After restarting your command prompt, don't forget to go to your `workspace` folder again and activate your virtualenv! (Hint: [Check the Python Introduction](../python_introduction/README.md))
 
 Please also create a free Heroku account here: https://id.heroku.com/signup/www-home-top
 
@@ -120,7 +118,7 @@ In case you don't have an SSH key this command will automatically create one. SS
 ## Git
 Git is a version control system used by a lot of programmers - software which keeps track of changes to a file or set of files over time so that you can recall specific versions later. Heroku uses a git repository to manage your project files, so we need to use it too.
 
-Create a file named `.gitignore` in your `djangogirls` directory with the following content:
+Create a file named `.gitignore` in your `workspace` directory with the following content:
 
     myvenv
     __pycache__
@@ -133,12 +131,12 @@ and save it. The dot on the beginning of the file name is important! As you can 
 
 Next, we’ll create a new git repository and save our changes.
 
-> __Note__: Check out your current working directory with a `pwd` command before initializing the repository. You should be in the `djangogirls` folder.
+> __Note__: Check out your current working directory with a `pwd` command before initializing the repository. You should be in the `workspace` folder.
 
 Go to your console and run these commands:
 
     $ git init
-    Initialized empty Git repository in ~/djangogirls/.git/
+    Initialized empty Git repository in ~/workspace/.git/
     $ git config user.name "Your Name"
     $ git config user.email you@example.com
 
@@ -156,10 +154,10 @@ It's a good idea to use a `git status` command before `git add` or whenever you 
 
       .gitignore
       Procfile
-      mysite/__init__.py
-      mysite/settings.py
-      mysite/urls.py
-      mysite/wsgi.py
+      critter_site/__init__.py
+      critter_site/settings.py
+      critter_site/urls.py
+      critter_site/wsgi.py
       manage.py
       requirements.txt
       runtime.txt
@@ -184,7 +182,7 @@ And finally we save our changes. Go to your console and run these commands:
 
 ## Pick an application name
 
-We'll be making your blog available on the Web at `[your blog's name].herokuapp.com`, so we need to choose a name that nobody else has taken. This name doesn't need to be related to the Django `blog` app or to `mysite` or anything we've created so far. The name can be anything you want, but Heroku is quite strict as to what characters you can use: you're only allowed to use simple lowercase letters (no capital letters or accents), numbers, and dashes (`-`).
+We'll be making your blog available on the Web at `[your blog's name].herokuapp.com`, so we need to choose a name that nobody else has taken. This name doesn't need to be related to the Django `cat_shelter` app or to `critter_site` or anything we've created so far. The name can be anything you want, but Heroku is quite strict as to what characters you can use: you're only allowed to use simple lowercase letters (no capital letters or accents), numbers, and dashes (`-`).
 
 Once you've thought of a name (maybe something with your name or nickname in it), run this command, replacing `djangogirlsblog` with your own application name:
 
