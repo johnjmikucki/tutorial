@@ -12,21 +12,15 @@
 
 *Example*
 Creating a model of a cat
-    Cat
-    
-    ------------------------
-    
-    Name
-    
-    Age
-    
-    Color
-    
-    Fluffy?
-    
-    Description
-    
-    Adopted
+
+        Cat
+        ------------------------
+        Name
+        Age
+        Color
+        Fluffy?
+        Description
+        Adopted
     
 - Add your newly created model to the application
   - Open `cat_shelter/models.py`
