@@ -22,12 +22,14 @@
 
     <html>
       <head>
-        <title>The Coolest Store</title>
+        <title>THE WORLD'S BEST CATS</title>
       <head>
       <body>
-        Hello world!
+        Hello world!  Come meet some fluffy cats!
       </body>
     </html>
+	
+![Basic Layout](images/basic_layout.png)
 
 - Adding a heading
   - Use the heading tags for headers and subheaders
@@ -37,15 +39,17 @@
 
     <html>
       <head>
-        <title>The Coolest Store</title>
+        <title>THE WORLD'S BEST CATS</title>
       </head>
       <body>
-        <h1>MY BIG TITLE! </h1>
+        <h1>My Favorite Cat</h1>
         ... some stuff here ...
-        <h2>My first subheading</h2>
+        <h2>My Favorite Cat's Favorite Things</h2>
         This heading will be smaller than the h1 heading.
       </body>
     </html>
+	
+![Add a Heading](images/add_a_heading.png)
 
 - Line breaks, paragraphs, and divs
   - Line breaks and paragraphs are the appropriate ways to make space in your webpage.
@@ -58,7 +62,7 @@
 
     <html>
       <head>
-        <title>The Coolest Store</title>
+        <title>THE WORLD'S BEST CATS</title>
       </head>
       <body>
         <div>
@@ -82,6 +86,7 @@
       </body>
     </html>
   
+  ![Line Breaks](images/line_breaks_paragraphs_and_divs.png)
 
 - Links
   - `<a href="THE URL FOR YOUR LINK GOES HERE!">Text for your link goes here!</a>`
@@ -99,19 +104,48 @@
 
     <html>
       <head>
-        <title>The Coolest Store</title>
+        <title>THE WORLD'S BEST CATS</title>
       </head>
       <body>
         <ul>
-          <li>Item one</li>
-          <li>Item two</li>
-          <li Item three</li>
+          <li>Cat one</li>
+          <li>Cat two</li>
+          <li>Cat three</li>
         </ul>
       </body>
     </html>
+	
+![Lists](images/lists.png)
 
 ## Next Steps ##
-- Use what you've learned to build out your views (such as `store/templates/store/inventory_list.html`)
+- Use what you've learned to build out your views (such as `cat_shelter/templates/cat_shelter/current_cats.html`)
   - Wrap the whole page in `<html></html>` tags
   - Create a head with a title for your page
   - Create a body with headings, paragraphs, line breaks, divs, lists, links, or whatever!
+
+*Example*
+
+    <html>
+      <head>
+        <title>Kitty Kastle</title>
+      </head>
+      <body>
+        <div>
+          <h1><a href="">Tara's Kitty Kastle!</a></h1>
+        </div>
+        <div>
+          <h2><a href="">Zelda</a></h2>
+          <p>Age: 2</p>
+          <p>Fluffy: no</p>
+          <p>Zelda likes to chase laser pointers and be scratched on her head.  She is most happy if she is allowed to sleep on your bed.  She will sit in your lap if you have a blanket.</p>
+        </div>
+        <div>
+          <h2><a href="">Toothless</a></h2>
+          <p>Age: 1</p>
+          <p>Fluffy: yes</p>
+          <p>Toothless loves to snuggle and play and be petted.  He will chase anything that moves.  He likes to knock stuff off shelves.  He loves to sit in the window.  His favorite food is pizza.</p>
+        </div>
+      </body>
+    </html>
+
+![Sample View](images/sample_view.png)
