@@ -6,7 +6,9 @@
 - Allows for object-oriented design
 - We are using Python 3.4.0
 
-## HowTo ##
+## Notes / Next Steps ##
+
+- If you are not familiar with Python, we recommend you do some of the examples below.  Typing it really does help you learn it!
 
 - Open the interpreter
 	- Call ```python3``` from any directory in your terminal
@@ -138,8 +140,9 @@
     ['uno', 'dos', 8, 4, 'last']
 
 - Manipulate dictionaries
-	- Uses curly braces: `{ }`
-	- Always a `name: value` pair
+    - Remember: a dictionary lets you associate keys/names with values.
+	- Uses curly braces: ```{ }```
+	- Always a ```name: value``` pair
 	- Manipulated a lot like lists except you use the name of the dictionary entry instead of the index number
 
 *Example*
@@ -193,6 +196,7 @@ or
 
 - For loop
 	- For each one of a thing, do the thing underneath
+	- Remember, the 'range' function is a convenient way to make lists of numbers
 
 *Example*
 
@@ -212,3 +216,14 @@ or
     I like cats
     I like dogs
     I like bunnies
+    
+- Functions
+  - To create your own function:
+  	- Function definitions always start with `def` + name + `(` + any parameters you need + `):`
+  	- All lines that are inside the function must be indented using tab, or a certain number of spaces.  It's your choice, but it has to be consistent in all of your code!
+ 
+*Example*
+
+	def hello():
+	  print("Hello world! ")
+	  print(":)")
