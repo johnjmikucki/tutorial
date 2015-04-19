@@ -41,8 +41,11 @@
     
 - Add application-specific instructions into your **application** URLs
   - When the site `critters_site` forwards requests to our application `cat_shelter`, what should we do with them?
-  - Open `cat_shelter/urls.py`
-  - Add a URL entry for your view.  Use `r` to specify when the application should use that view.
+  - Create a file `cat_shelter/urls.py`
+  - At the very top put the following two lines
+    - `from django.conf.urls import include, url`
+    - `from . import views`
+  - Add a URL entry for your view in a little `url_patterns` block like the one in `critters_site/urls.py`.  Use `r` to specify when the application should use that view.
     - Adding the `current_cats` using this `r` will use the `current_cats` view for empty strings--when you specify no path in the request.
       - `url(r'^$', views.current_cats),`
       - `r'^$'` : `^` is beginning and `$` is end so `^$` is "nothing between beginning and end"
