@@ -12,6 +12,8 @@
   - `(myvenv) student@adminuser-VirtualBox:~/workspace > python manage.py shell`
   - Don't forget to import any models you want to manipulate
     - `>>> from cat_shelter.models import Cat`
+  - Add this also so we can look up cats by adoption date
+    - `>>> from django.utils import timezone`
 - List all of a model object
   - `Cat.objects.all()`
 - Get a specific object and save it to a variable
@@ -26,14 +28,16 @@
   - `Cat.objects.order_by('-age')`
 - Make query results available to your view
   - Open `cat_shelter/views.py`
+  - Include the new model at the top
+    - `from .models import Cat`
   - In the function for the view you are interested in:
     - Add the query and save it to a variable
       - `mycats = Cat.objects.all().order_by('age')`
     - Give the variable a name and pass it to the html like a dictionary
-      - `'mycats' : theCats`
+      - `'mycats' : mycats`
 
 *Example*
 
     def current_cats(request):
       theCats = Cat.objects.all().order_by('age')
-      return render(request, 'cat_shelter/current_cats.html', {'mycats' : theCats})
+      return render(request, 'cat_shelter/current_cats.html', {'mycats' : mycats})
