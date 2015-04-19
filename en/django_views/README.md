@@ -23,11 +23,11 @@
 - Add a reference to your **application** URLs in your **site** URLs
   - This means when certain kinds of requests come into your site (`critters_site`), they will get sent to your application (`cat_shelter`) for more instructions.
   - Open `critters_site/urls.py`
-  - Add a URL entry pointing to your store.urls.  Use `r` to specify when the site should use that app
+  - Add a URL entry pointing to your cat_shelter.urls.  Use `r` to specify when the site should use that app
     - Adding the cat_shelter.urls using this `r` will forward **all** requests to your store app.  Basically saying "If I get any request, look for instructions `here`."
       - `url(r'', include('cat_shelter.urls')),`
-    - Adding the `cat_shelter.urls` using this `r` will forward requests that start with `kitties` to the `cat_shelter` app. asically saying "If I get a request like `http://127.0.0.1:8000/kitties/...`, look for instructions `here`."
-      - `url(r'^kitties', include('cat_shelter.urls')),`
+    - Adding the `cat_shelter.urls` using this `r` will forward requests that start with `kitties` to the `cat_shelter` app. Basically saying "If I get a request like `http://127.0.0.1:8000/kitties/...`, look for instructions `here`."
+      - `url(r'^kitties/', include('cat_shelter.urls')),`
 
 *Example*
 
