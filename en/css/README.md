@@ -100,31 +100,33 @@ Your file should now look like this:
 
 ```html
 {% load staticfiles %}
-<head>
-<title>Kitty Kastle</title>
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-<link rel="stylesheet" href="{% static 'css/cat_shelter.css' %}">
-</head>
-<body>
-<div>
-  <h1><a href="">Tara's Kitty Kastle!</a></h1>
-</div>
-
-{% for cat in mycats %}
-  <div>
-    <h2><a href="{%url 'cat_shelter.views.cat_detail' pk=cat.pk%}"> {{ cat.name }}</a></h2>
-    <p>Age: {{ cat.age }}</p>
-    <p>Fluffy: 
-    {% if cat.fluffy %}
-      Yep! 
-    {% else %}
-      Nope
-    {% endif %}</p>
-    <p>{{ cat.desc|linebreaks}}</p>
-  </div>
-{% endfor %}
-
-</body>
+<html>
+	<head>
+	<title>Kitty Kastle</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="{% static 'css/cat_shelter.css' %}">
+	</head>
+	<body>
+	<div>
+	  <h1><a href="">Tara's Kitty Kastle!</a></h1>
+	</div>
+	
+	{% for cat in mycats %}
+	  <div>
+	    <h2><a href="{%url 'cat_shelter.views.cat_detail' pk=cat.pk%}"> {{ cat.name }}</a></h2>
+	    <p>Age: {{ cat.age }}</p>
+	    <p>Fluffy: 
+	    {% if cat.fluffy %}
+	      Yep! 
+	    {% else %}
+	      Nope
+	    {% endif %}</p>
+	    <p>{{ cat.desc|linebreaks}}</p>
+	  </div>
+	{% endfor %}
+	
+	</body>
+</html>
 ```
 
 OK, save the file and refresh the site!
