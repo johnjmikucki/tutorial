@@ -53,6 +53,8 @@ Creating a model of a cat
 - Add the model to the database
   - Creates the migration (basically a magical script that adds or removes stuff) for your application within your site.  You will need to call this any time you want to change or add a model to the `cat_shelter`
     - `(myvenv) student@adminuser-VirtualBox:~/workspace > python manage.py makemigrations cat_shelter`
+- Perform that migration on the database
+    - `(myvenv) student@adminuser-VirtualBox:~/workspace > python manage.py migrate cat_shelter`
 
 - Create the admin user to allow for tinkering with models via the browser
   - This isn't required, but setting up the "admin" user and associated routes lets us modify and manipulate any models we register with the admin user in the browser instead of only via the console (which we'll learn about in a few chapters)
