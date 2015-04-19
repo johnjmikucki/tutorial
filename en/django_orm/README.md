@@ -12,6 +12,8 @@
   - `(myvenv) student@adminuser-VirtualBox:~/workspace > python manage.py shell`
   - Don't forget to import any models you want to manipulate
     - `>>> from cat_shelter.models import Cat`
+  - Add this also so we can look up cats by adoption date
+    - `>>> from django.utils import timezone`
 - List all of a model object
   - `Cat.objects.all()`
 - Get a specific object and save it to a variable
