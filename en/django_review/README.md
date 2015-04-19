@@ -39,4 +39,8 @@
 - Create a template for the detail page
 	- Visit [Using Query Data in Templates](../dynamic_data_in_templates/README.md) for a refresher on putting code into your HTML
 
-
+- Add another attribute (or more) to your model
+	- Make changes to your `models.py`
+	- Create and run the migrations
+		- Check out [Django Models](../django_models/README.md) for a reminder
+	- Work these new things into your view!
