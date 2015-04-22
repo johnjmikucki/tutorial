@@ -5,7 +5,7 @@
 - An interpreted programming language that works in pretty much any operating system
 - Allows for object-oriented programming (OOP)
 -- OOP combines descriptions of data with the functions that manipulate them
-- We are using Python 3.4.0
+- We are using Python 3.4.0.
 
 
 ## Practice!##
