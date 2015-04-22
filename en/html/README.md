@@ -1,21 +1,24 @@
 # Introduction to HTML #
 
 ## What is it? ##
-
-- The most basic language for formatting a web page
-- Different sections/instructions are marked using opening tags `< ... >` and a corresponding closing tag `</ ... >`
-- There are a ton of different formatting options.  We're only going to talk about the basics, but you can get more information from the internet!
-- You'll put this stuff in the `html` file for your views to change how they look!
-- Unlike Python, the indentation for html is not **required** but it's a good idea to use it to make your files easier to read.
+- Acronym for Hyper-Text Markup Language
+- The most basic language for describing a web page
+- Your views (web pages) will be written in HTML!
 
 ## Notes ##
+- HTML file names usually end in `.html`
+- HTML marks up text by wrapping parts of the text in tags. Tags are instructions.
+- Tags are balanced (they have an opening and a corresponding closing tag, which must match).  Tags can be nested.  Like parentheses:
+```<lunch><sandwich>PB&J</sandwich><lunch>```
+- There are a ton of different formatting options to change how your web pages look.  We're only going to talk about the basics, but you can get more information from the internet!
+
 
 - Basic layout of html page
   - HTML pages always start and end with an HTML tag
     - `<html> YOUR STUFF HERE </html>`
   - The head tag goes at the beginning and contains the title and other settings for the rest of the file
     - `<head> <title>My First Webpage!</title> </head>`
-  - The body is what you put most of your stuff inside.  Everything you wanna display and the formatting for those things.
+  - The body is the bulk of your web page: everything you wanna display and the formatting for those things.
      - `<body> This is my very first webpage!  Hello world! </body>`
 
 *Example*
@@ -32,6 +35,7 @@
 ![Basic Layout](images/basic_layout.png)
 
 - Adding a heading
+  - Headings indicate hierarchy.  Smaller numbers for bigger sections.
   - Use the heading tags for headers and subheaders
     - `<h1></h1>`, `<h2></h2>`, `<h3></h3>` etc
 
@@ -52,11 +56,11 @@
 ![Add a Heading](images/add_a_heading.png)
 
 - Line breaks, paragraphs, and divs
-  - Line breaks and paragraphs are the appropriate ways to make space in your webpage.
-  - A line break `<br /> has no closing tag, and is just used to indicate a new line.
-    - Hitting enter in the middle of typing words in a webpage won't (usually) work.  The browser will smoosh it all together when rendering.  You have to use a `<br />` to indicate that you really want a newline there
-  - Paragraphs `<p></p>` work kind of like the line break but they are used to logically group text, and they have a closing tag.  It is a way to indicate "All this text goes together, and the text ouside it goes to something else."
-  - Divs `<div></div>` are another level up from paragraphs.  Where as paragraphs are used to group a few sentences together, you can think of a div as grouping potentially a few paragraphs together, like a chapter if the whole page is your book.
+  - Line breaks and paragraphs allow you to break up large blocks of text.
+  - A line break `<br></br>` can be shortened to `<br />` and just indicates a new line.
+    - Hitting enter in the middle of typing words in a webpage won't (usually) work.  The browser will smoosh it all together when rendering.  You have to use a `<br />` to indicate that you really want a newline there.
+  - Paragraphs `<p></p>` logically group text together.  It says "All this text goes together, and the text outside it goes to something else."
+  - Divs `<div></div>` let you group together more complex things.  Where paragraphs group a few sentences, a div might group a few paragraphs, like a chapter if the whole page is your book.  Or, it could group together some text, a button, and an image if they all go together as a unit.
 
 *Example*
 
@@ -89,8 +93,8 @@
   ![Line Breaks](images/line_breaks_paragraphs_and_divs.png)
 
 - Links
-  - `<a href="THE URL FOR YOUR LINK GOES HERE!">Text for your link goes here!</a>`
-  - Just like you can put header tags inside divs or paragraphs, you can put links inside header tags or other formatting tags
+  - `<a href="URL TO LINK TO">Text displayed for your link!</a>`
+  - Just like you can put header tags inside divs or paragraphs, you can put links inside header tags or other formatting tags.
     - `<h1><a href="www.google.com">Google!</a></h1>`
     - If you leave the url blank it will create what looks like a link, but clicking it won't go anywhere
       - `<a href="">This link won't go anywhere</a>`
@@ -98,7 +102,7 @@
 - Lists
   - `<ul></ul>` : indicate the beginning and end of a list
   - `<li></li>` : indicate the beginning and end of a list entry
-  - Just like for everything else, the newlines are optional.  They just make it easier to read.
+  - Just like for everything else in HTML, the newlines and indentation are optional--they just make it easier to read.
 
 *Example*
 
@@ -118,7 +122,13 @@
 ![Lists](images/lists.png)
 
 ## Next Steps ##
-- Use what you've learned to build out your views (such as `cat_shelter/templates/cat_shelter/current_cats.html`)
+
+### Build your views ###
+(such as `cat_shelter/templates/cat_shelter/current_cats.html`)
+
+Why: So you have something to display when your app gets asked for a page!
+
+How:
   - Wrap the whole page in `<html></html>` tags
   - Create a head with a title for your page
   - Create a body with headings, paragraphs, line breaks, divs, lists, links, or whatever!
