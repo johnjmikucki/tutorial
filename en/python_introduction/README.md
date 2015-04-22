@@ -3,10 +3,12 @@
 ## What is it? ##
 
 - An interpreted programming language that works in pretty much any operating system
-- Allows for object-oriented design
-- We are using Python 3.4.0
+- Allows for object-oriented programming (OOP)
+-- OOP combines descriptions of data with the functions that manipulate them
+- We are using Python 3.4.0.
 
-## Notes / Next Steps ##
+
+## Practice!##
 
 - If you are not familiar with Python, we recommend you do some of the examples below.  Typing it really does help you learn it!
 
@@ -28,17 +30,6 @@
 
     student@adminuser-VirtualBox:~/workspace > python3 hello.py 
     Hello, world!
-
-
-- Set up virtualenv
-	- Install Python-virtualenv if you haven't already
-		- `student@adminuser-VirtualBox:~/workspace > sudo apt-get install python-virtualenv`
-	- Create a new virtualenv.  Substitute `myvenv` for whatever you want to name your environment
-		- `student@adminuser-VirtualBox:~/workspace > virtualenv --python=python3.4 myvenv`
-
-- Start the virtualenv
-	- `student@adminuser-VirtualBox:~/workspace > source myvenv/bin/activate`
-		- **NOTE** Remember to replace `myvenv` with whatever you decided to name your virtualenv
 
 - Assign a variable
 	- `<variable> = <value>`
@@ -220,7 +211,7 @@ or
 - Functions
   - To create your own function:
   	- Function definitions always start with `def` + name + `(` + any parameters you need + `):`
-  	- All lines that are inside the function must be indented using tab, or a certain number of spaces.  It's your choice, but it has to be consistent in all of your code!
+  	- All lines that are inside the function must be indented using tab, or a certain number of spaces.  It's your choice, but **it has to be consistent in all of your code!**
  
 *Example*
 
