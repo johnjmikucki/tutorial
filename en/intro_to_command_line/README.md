@@ -2,7 +2,7 @@
 
 ## What is it? ##
 - A way to control your computer by **typing** instead of clicking
-- You will also hear it called a **"terminal"** or "command prompt".  In this version of linux the program is called **Konsole**
+- You will also hear it called a **"terminal"** or "command prompt" or "shell".  In this version of linux the program is called **Konsole**
 - Windows has one, too
 - Your **home** directory is where the terminal always starts when you open a new one.  The symbol for it is **~**
 - It looks like this: 
@@ -12,8 +12,8 @@
 ## HowTo ##
 
 - Open a new terminal window
-	- Click the Konsole icon on the quickstart panel ![Konsole Toolbar](images/konsole_toolbar.jpg)
-	- **OR** open the Mint menu ![Mint Toolbar](images/mint_toolbar.jpg)
+	- Click the Konsole icon on the quickstart panel<br>![Konsole Toolbar](images/konsole_toolbar.jpg)</br>
+	- **OR** open the Mint menu <br>![Mint Toolbar](images/mint_toolbar.jpg)</br>
 	- Type ```konsole``` in the search bar
 	- ```Enter```
 

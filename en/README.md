@@ -18,11 +18,11 @@ Specifically, we're going to build a simple web site - what, exactly, is up to y
 
 The tutorial will not magically turn you into a programmer.  Like any other skill, mastery can take months or even years of learning and practice. But we want to show you that programming or creating websites is not as complicated as they can seem, so you can go exploring with confidence. :)
 
-We hope that we'll be able to make you love technology as much as we do!
+We hope you'll come to love technology as much as we do-- and that you'll be more comfortable and confident about pursuing a career in it.
 
 ## What will you learn during the tutorial?
 
-Once you've finished the tutorial, you will have a simple, working web application: your own blog. We will show you how to put it online, so others will see your work!
+Once you've finished the tutorial, you will have a simple, working web application.  While we probably won't have time to show you today, an appendix will show you how to put it online, so others can see your work!
 
 We can't show you what yours will look like - after all, you get to choose what you'll build today - but here's what the demo will (more or less) look like:
 

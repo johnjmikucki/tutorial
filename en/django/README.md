@@ -8,11 +8,25 @@
 
 ## Next Steps ##
 
+- Set up virtualenv
+
+    Django has lots of parts.  To help keep them organized, create and use a virtualenv - a context within which your project is interpreted.
+
+	- Install Python-virtualenv if you haven't already
+		- `student@adminuser-VirtualBox:~/workspace > sudo apt-get install python-virtualenv`
+	- Create a new virtualenv.  Substitute `myvenv` for whatever you want to name your environment
+		- `student@adminuser-VirtualBox:~/workspace > virtualenv --python=python3.4 myvenv`
+
+- Start the virtualenv
+	- `student@adminuser-VirtualBox:~/workspace > source myvenv/bin/activate`
+		- **NOTE** Remember to replace `myvenv` with whatever you decided to name your virtualenv
+
+
 - **NOTE** From here on out, anything you call from the command line must be called with the virtualenv running.  If you do not see `(myvenv)` (or `(whatever you named it)`) at the beginning of your command line prompt, go back and start virtualenv
 
 - Install Django in virtualenv
-  - Make sure your virtualenv is running (see [Introduction to Python](python_introduction/README.md) for a reminder)
-  - Install Django using pip
+  - Make sure your virtualenv is running (see above)
+  - Install Django using pip (Python's preferred package procurer)
 
 *Example*
 
