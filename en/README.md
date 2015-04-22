@@ -29,7 +29,7 @@ We can't show you what yours will look like - after all, you get to choose what 
 ![Figure 0.1](css/images/final.png)
 
 
-OK, [let's start at the beginning...](./how_the_internet_works/README.md)
+OK, [let's start with a look at your tools](intro_to_command_line/README.html)
 
 ## About and contributing
 
@@ -37,4 +37,4 @@ This tutorial is is a prototype under development at https://github.com/johnjmik
 
 ## Would you like to help us translate the tutorial to other languages?
 
-That's really awesome but we are still working on the English version.  Once we get it smoothed out we'd love to have help translating though!
+That's really awesome but we are still working on the English version.  Once we get it smoothed out we'd love help translating!

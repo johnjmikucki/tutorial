@@ -17,7 +17,7 @@
             "todos" : true
         },
         "edit-link": {
-            "base": "https://github.com/djangogirls/tutorial/edit/master",
+            "base": "https://github.com/johnjmikucki/tutorial/edit/master",
             "label": "Edit This Page"
         }
     },
