@@ -218,17 +218,3 @@ or
 	def hello():
 	  print("Hello world! ")
 	  print(":)")
-
-
-## Next Steps
-
-
-- Set up virtualenv
-	- Install Python-virtualenv if you haven't already
-		- `student@adminuser-VirtualBox:~/workspace > sudo apt-get install python-virtualenv`
-	- Create a new virtualenv.  Substitute `myvenv` for whatever you want to name your environment
-		- `student@adminuser-VirtualBox:~/workspace > virtualenv --python=python3.4 myvenv`
-
-- Start the virtualenv
-	- `student@adminuser-VirtualBox:~/workspace > source myvenv/bin/activate`
-		- **NOTE** Remember to replace `myvenv` with whatever you decided to name your virtualenv
