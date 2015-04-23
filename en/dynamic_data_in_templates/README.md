@@ -20,6 +20,7 @@
 
 - Combine HTML and Django magic to make our page look like it did before, but this time using our variables
 - **NOTE** If you're having trouble with your templates and getting weird errors, make sure you haven't put any spaces between your `{` and your `%`.  It doesn't like that.
+- For now we're looking at `cat_shelter/templates/cat_shelter/current_cats.html`
 
 *Example*
 
