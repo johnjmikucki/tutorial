@@ -7,7 +7,7 @@
 ## Next Steps ##
 
 
-### Update the URL patterns ###
+### Update the URL patterns in the links ###
 
 Note: - To review HTML links see [Introduction to HTML](../html/README.md)
 
