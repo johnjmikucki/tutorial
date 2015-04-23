@@ -14,4 +14,4 @@
 * [Appendix B: CSS](css/README.md)
 * [Appendix C: Get Crazy with Templates](template_extending/README.md)
 * [Appendix D: Django Forms](django_forms/README.md)
-* [Appendix Ω: Collection of Links to Next Step Sections](links_to_todos.md)
+* [Appendix E: Collection of Links to Next Step Sections](links_to_todos.md)
