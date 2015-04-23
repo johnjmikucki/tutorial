@@ -29,7 +29,7 @@ We can't show you what yours will look like - after all, you get to choose what 
 ![Figure 0.1](css/images/final.png)
 
 
-OK, [let's start with a look at your tools](intro_to_command_line/README.html)
+OK, [let's start with a look at your tools](intro_to_command_line/README.md)
 
 ## About and contributing
 
