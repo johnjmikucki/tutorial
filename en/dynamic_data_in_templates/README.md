@@ -1,16 +1,14 @@
-# Dynamic Templates #
+# Dynamic Templating #
 
 ## What is it? ##
+- Incorporates data from QuerySets into views, so your website's content changes when your data changes.
+- A bit like Mad Libs with HTML.  Words come from your database!
+- Works by putting special python and Django code right inside the HTML.
 
-- Allows you to use the query sets that we discussed, and other things, to put stuff on your website that changes when your data changes.
-- Django allows us to put special code right into the HTML.
-- Remember the `mycats` value we sent in the `def current_cats(request):` function in `cat_shelter/views.py`?  We were passing that information into the HTML, so now we can use the `mycats` variable in our HTML
+- Remember the `mycats` value we passed to the `def current_cats(request):` function in `cat_shelter/views.py`?  We did that to make it accessible here, so we can use it in our template code.
 
-## HowTo ##
-
-- Inside the HTML, variables/strings that you just want to print go inside double curly brackets `{{``}}`
-  - `{{ mycats }}`
-- Commands go inside a curly brace marked with a `%`: `{%``%}`
+- Inside the HTML, variables/strings that you just want to print go inside double curly brackets `{{``}}`, like so: `{{ mycats }}`
+- Commands go inside a curly brace marked with a `%`: `{%``%}`.  This tells Django to interpret the contents as Python code.  Be sure not to put spaces between the `{` and `%` !
 
 *Example*
 
@@ -18,8 +16,16 @@
       {{ cat }}
     {% endfor %}
 
-- Combine HTML and Django magic to make our page look like it did before, but this time using our variables
-- **NOTE** If you're having trouble with your templates and getting weird errors, make sure you haven't put any spaces between your `{` and your `%`.  It doesn't like that.
+
+## Next Steps ##
+
+### Rebuild your view using templates###
+
+Why: So we don't have to manually update our web page every time we get a new cat.
+
+How:
+
+- Add some Django magic to your HTML, so our page looks like before, but uses our variables
 
 *Example*
 
