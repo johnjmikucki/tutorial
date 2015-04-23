@@ -28,7 +28,7 @@ A cat
         Description
         Adopted
     
-### Model your object in Django ### 
+### Model your object in Django
 Why:  So Django can help us herd our cats.
 
 How:

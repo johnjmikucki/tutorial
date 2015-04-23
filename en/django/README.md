@@ -37,7 +37,7 @@
     Cleaning up...
 
 - Start a new Django project
-  - You can replace `mysite` with whatever you want to call it.  Just don't forget!
+  - You can replace `critter_site` with whatever you want to call it.  Just don't forget!
   - `(myvenv) student@adminuser-VirtualBox:~/workspace > django-admin startproject critters_site .`
   - The `.` is **VERY IMPORTANT**.  It tells Django to make the new website in your current directory.
 

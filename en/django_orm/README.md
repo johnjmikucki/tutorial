@@ -44,5 +44,5 @@ How:
 *Example*
 
     def current_cats(request):
-      theCats = Cat.objects.all().order_by('age')
+      mycats = Cat.objects.all().order_by('age')
       return render(request, 'cat_shelter/current_cats.html', {'mycats' : mycats})

@@ -1,5 +1,6 @@
 # Summary
 
+* [Introduction](README.md)
 * [Using the Linux Command Line](intro_to_command_line/README.md)
 * [Introduction to Python](python_introduction/README.md)
 * [Getting Started with Django](django/README.md)
