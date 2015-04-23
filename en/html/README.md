@@ -9,7 +9,9 @@
 - HTML file names usually end in `.html`
 - HTML marks up text by wrapping parts of the text in tags. Tags are instructions.
 - Tags are balanced (they have an opening and a corresponding closing tag, which must match).  Tags can be nested.  Like parentheses:
+
 ```<lunch><sandwich>PB&J</sandwich><lunch>```
+
 - There are a ton of different formatting options to change how your web pages look.  We're only going to talk about the basics, but you can get more information from the internet!
 
 
