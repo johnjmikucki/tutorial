@@ -67,7 +67,7 @@ Why: Now that we have a `Cat` object, we need a template in which to display its
 
 How: 
 
-	- Visit [Using Query Data in Templates](../dynamic_data_in_templates/README.md) for a refresher on putting code into your HTML
+- Visit [Using Query Data in Templates](../dynamic_data_in_templates/README.md) for a refresher on putting code into your HTML
 
 ### Optional: Add another attribute (or more) to your model ###
 Why: Why Not?
