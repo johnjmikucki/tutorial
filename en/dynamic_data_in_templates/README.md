@@ -2,16 +2,13 @@
 
 ## What is it? ##
 - Incorporates data from QuerySets into views, so your website's content changes when your data changes.
-- A bit like Mad Libs for your database
+- A bit like Mad Libs with HTML.  Words come from your database!
 - Works by putting special python and Django code right inside the HTML.
 
 - Remember the `mycats` value we passed to the `def current_cats(request):` function in `cat_shelter/views.py`?  We did that to make it accessible here, so we can use it in our template code.
 
-- Inside the HTML, variables/strings that you just want to print go inside double curly brackets `{{``}}`
-  - e.g.: `{{ mycats }}`
+- Inside the HTML, variables/strings that you just want to print go inside double curly brackets `{{``}}`, like so: `{{ mycats }}`
 - Commands go inside a curly brace marked with a `%`: `{%``%}`.  This tells Django to interpret the contents as Python code.  Be sure not to put spaces between the `{` and `%` !
-
-- **IMPORTANT:** If you're having trouble with your templates and getting weird errors, make sure you haven't put any spaces between your `{` and your `%`.  It doesn't like that.
 
 *Example*
 
@@ -22,7 +19,7 @@
 
 ## Next Steps ##
 
-### Rebuild our view using templates###
+### Rebuild your view using templates###
 
 Why: So we don't have to manually update our web page every time we get a new cat.
 
