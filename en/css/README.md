@@ -232,7 +232,7 @@ Now we can add declaration blocks to style our selectors. Selectors starting wit
         float: right;
     }
 
-    .post-form textarea, .post-form input {
+    .cat-form textarea, .cat-form input {
         width: 100%;
     }
 
@@ -247,7 +247,7 @@ Now we can add declaration blocks to style our selectors. Selectors starting wit
         margin-bottom: 70px;
     }
 
-    .cat h2 a, .post h2 a:visited {
+    .cat h2 a, .cat h2 a:visited {
         color: #000000;
     }
 ```
@@ -276,7 +276,7 @@ in the `cat_shelter/templates/cat_shelter/current_cats.html` with this:
     <div class="content container">
         <div class="row">
             <div class="col-md-8">
-                {% for post in posts %}
+                {% for cat in cats %}
                   <div class="cat">
                     <h2><a href="{%url 'cat_shelter.views.cat_detail' pk=cat.pk%}"> {{ cat.name }}</a></h2>
                     <p>Age: {{ cat.age }}</p>
