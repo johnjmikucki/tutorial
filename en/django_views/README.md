@@ -98,5 +98,5 @@ Why?  We told our handler to render an HTML page... now we need to put some HTML
 How?
   - Create `cat_shelter/templates` and `cat_shelter/templates/cat_shelter` directories. 
   - Note: Django convention is to create a directory inside the `templates` directory for your app (even though your templates directory is already inside a directory for your app.  Whatever.)
-  - For the example above, you will create a file named `current_cats.html` in the `cat_shelter/templates/cat_shelter` directory.  You can leave it blank or [Add HTML](html/README.md)
+  - For the example above, you will create a file named `current_cats.html` in the `cat_shelter/templates/cat_shelter` directory.  You can leave it blank or [Add HTML](../html/README.md)
   - You'll need to restart your django server to see this addition.  Hit Control-C, up-arrow, enter!

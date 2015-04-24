@@ -132,4 +132,4 @@ That's it! Check if your website is still working properly :)
 > If you have an error `TemplateDoesNotExists` that says that there is no `cat_shelter/base.html` file and you have `runserver` running in the console, try to stop it (by pressing Ctrl+C - Control and C buttons together) and restart it by running a `python manage.py runserver` command.
 
 
-[Use These Template Skills to Make Forms](django_forms/README.md)
+[Use These Template Skills to Make Forms](../django_forms/README.md)

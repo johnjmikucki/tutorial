@@ -1,4 +1,4 @@
-# Django Forms
+# Appendix D: Django Forms
 
 The final thing we want to do on our website is create a nice way to add and edit new cats. Django's `admin` is cool, but it is rather hard to customize and make pretty. With `forms` we will have absolute power over our interface - we can do almost anything we can imagine!
 
