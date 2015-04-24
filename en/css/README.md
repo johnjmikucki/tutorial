@@ -6,15 +6,15 @@ Cascading Style Sheets (CSS) is a language used for describing the look and form
 
 But we don't want to start from scratch again, right? We will, once more, use something that has already been done by programmers and released on the Internet for free. You know, reinventing the wheel is no fun.
 
-## Let's use Bootstrap!
+## Let's use Bootstrap! ##
 
 Bootstrap is one of the most popular HTML and CSS frameworks for developing beautiful websites: http://getbootstrap.com/
 
 It was written by programmers who worked for Twitter and is now developed by volunteers from all over the world.
 
-## Install Bootstrap
+## Link to Bootstrap ##
 
-To install Bootstrap, you need to add this to your `<head>` in your `.html` file (`cat_shelter/templates/blog/current_cats.html`):
+To use Bootstrap, you need to add this to your `<head>` in your `.html` file (`cat_shelter/templates/blog/current_cats.html`):
 
 ```
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -28,15 +28,15 @@ Just go ahead, open your website and refresh the page. Here it is!
 
 Looking nicer already!
 
-## Static files in Django
+## Static files in Django ##
 
-Another thing you will learn about today is called __static files__. Static files are all your CSS and images -- files that are not dynamic, so their content doesn't depend on request context and will be the same for every user.
+There are two kinds of files in Django -- __static__ and __dynamic__.  You've already met dynamic files -- your templates were dynamic, as their content could change based on content or context.  Files which don't do that - which are the same no matter what - are called __static files__.  So, all your CSS and images are static files -- they will be the same for every user, every time.
 
-CSS is a static file, so in order to customize CSS, we need to first configure static files in Django. You'll only need to do it once. Let's start:
+CSS is a static file, so in order to leverage CSS, we need to first configure static files in Django. You'll only need to do it once. Let's start:
 
-### Configure static files in Django
+### Configure static files in Django ###
 
-First, we need to create a directory to store our static files in. Go ahead and create a directory called `static` inside your `workspace` directory.
+First, we need a directory to store our static files. Go ahead and create the `workspace/static` directory.
 
     workspace
     ├─── static
@@ -50,9 +50,9 @@ STATICFILES_DIRS = (
 )
 ```
 
-This way Django will know where to find your static files.
+This tells Django where to look for your static files.
 
-## Your first CSS file!
+## Your first CSS file! ##
 
 Let's create a CSS file now, to add your own style to your web-page. Create a new directory called `css` inside your `static` directory. Then create a new file called `cat_shelter.css` inside this `css` directory. Ready?
 
@@ -62,9 +62,9 @@ Let's create a CSS file now, to add your own style to your web-page. Create a ne
 
 Time to write some CSS! Open up the `static/css/cat_shelter.css` file in your code editor.
 
-We won't be going too deep into customizing and learning about CSS here, because it's pretty easy and you can learn it on your own after this workshop. We really recommend doing this [Codeacademy HTML & CSS course](http://www.codecademy.com/tracks/web) to learn everything you need to know about making your websites more pretty with CSS.
+We won't be going too deep into customizing and learning about CSS, because the concepts are comparatively simple and you can learn it on your own after this workshop. We really recommend doing this [Codeacademy HTML & CSS course](http://www.codecademy.com/tracks/web) to learn everything you need to know about making your websites more pretty with CSS.
 
-But let's do at least a little. Maybe we could change the color of our header? To understand colors, computers use special codes. They start with `#` and are followed by 6 letters (A-F) and numbers (0-9). You can find color codes for example here: http://www.colorpicker.com/. You may also use [predefined colors](http://www.w3schools.com/cssref/css_colornames.asp), such as `red` and `green`.
+But let's do at least a little. Maybe we could change the color of our header? To understand colors, computers use special codes. They start with `#` and are followed by 6 letters (A-F) and numbers (0-9). You can find example color codes here: http://www.colorpicker.com/. You may also use [predefined colors](http://www.w3schools.com/cssref/css_colornames.asp), such as `red` and `green`.
 
 In your `static/css/cat_shelter.css` file you should add the following code:
 
@@ -74,9 +74,9 @@ In your `static/css/cat_shelter.css` file you should add the following code:
     }
 ```
 
-`h1 a` is a CSS Selector. This means we're applying our styles to any `a` element inside of an `h1` element (e.g. when we have in code something like: `<h1><a href="">link</a></h1>`).  In this case, we're telling it to change its color to `#FCA205`, which is orange. Of course, you can put your own color here!
+`h1 a` is a CSS Selector. Selectors match elements in your HTML and then apply to them the formatting instructions you specify.  The example above says to make `#FCA205` (orange) all `a` elements inside of an `h1` element (i.e. when we have HTML like: `<h1><a href="">link</a></h1>`).  Of course, you can choose your own color instead!
 
-In a CSS file we determine styles for elements in the HTML file. The elements are identified by the element name (i.e. `a`, `h1`, `body`), the attribute `class` or the attribute `id`. Class and id are names you give the element by yourself. Classes define groups of elements, and ids point to specific elements. For example, the following tag may be identified by CSS using the tag name `a`, the class `external_link`, or the id `link_to_wiki_page`:
+In a CSS file we determine styles for HTML elements. Elements are identified by name (i.e. `a`, `h1`, `body`), attribute `class`, or attribute `id`. Class and id are names you give the element by yourself. Classes define groups of elements, and ids point to specific elements. For example, the following HTML tag may be identified by CSS using the tag name `a`, the class `external_link`, or the id `link_to_wiki_page`:
 
 ```html
     <a href="http://en.wikipedia.org/wiki/Django" class="external_link" id="link_to_wiki_page">
@@ -88,15 +88,17 @@ Then, we need to also tell our HTML template that we added some CSS. Open the `c
 
 `{% load staticfiles %}`
 
-We're just loading static files here :). Then, between the `<head>` and `</head>`, after the links to the Bootstrap CSS files (the browser reads the files in the order they're given, so code in our file may override code in Bootstrap files), add: 
+(Remember the `{% %}` wrapper tells Django to interpret the statements inside - which say to load static files here. :) )
+
+Then, between the `<head>` and `</head>`, after the links to the Bootstrap CSS files add: 
 
 ```html
 <link rel="stylesheet" href="{% static 'css/blog.css' %}">
 ```
 
-We just told our template where our CSS file is located.
-
-Your file should now look like this:
+(Note: The browser reads the files in the order they're given, so we want to load our file after Bootstrap so we can  override parts of it.)
+ 
+And now our template will include our CSS file!  Your file should now look like this:
 
 ```html
 {% load staticfiles %}
@@ -129,13 +131,13 @@ Your file should now look like this:
 </html>
 ```
 
-OK, save the file and refresh the site!
+Save your file and refresh the site!
 
 ![Figure 14.2](images/color2.png)
 
-**NOTE** The names aren't colorized.  Hmm.  That's probably because they're header type `h2` instead of `h1`.  Change the CSS to select `h1 a, h2 a` instead of just `h1 a` to apply to both!
+**NOTE** The names aren't colorized.  Hmm.  That's probably because they're header type `h2` instead of `h1`.  Change the CSS to select `h1 a, h2 a` instead of just `h1 a` so our styling is applied to both.
 
-Nice work! Maybe we would also like to give our website a little air and increase the margin on the left side? Let's try this!
+Nice work! It's a bit cramped, though -- let's give our website a little air by increasing the left margin.
 
 ```css
     body {
@@ -143,7 +145,7 @@ Nice work! Maybe we would also like to give our website a little air and increas
     }
 ```
 
-Add this to your CSS, save the file and see how it works!
+Add that to your CSS, save the file and see how it looks!
 
 ![Figure 14.3](images/margin2.png)
 
@@ -155,7 +157,7 @@ Maybe we can customize the font in our header? Paste this into your `<head>` in 
 
 This line will import a font called *Lobster* from Google Fonts (https://www.google.com/fonts).
 
-Now add the line `font-family: 'Lobster';` in the CSS file `static/css/cat_shelter.css` inside the `h1 a` declaration block (the code between the braces `{` and `}`)  and refresh the page:
+Now open up your CSS file `static/css/cat_shelter.css`.   Inside the `h1 a` block (between the braces `{` and `}`), add `font-family: 'Lobster';`, thusly:
 
 ```css
     h1 a {
@@ -164,14 +166,16 @@ Now add the line `font-family: 'Lobster';` in the CSS file `static/css/cat_shelt
     }
 ```
 
+Save and refresh the page--
+
 ![Figure 14.3](images/font.png)
 
 Great!
 
 
-As mentioned above, CSS has a concept of classes, which basically allows you to name a part of the HTML code and apply styles only to this part, not affecting others. It's super helpful if you have two divs, but they're doing something very different (like your header and your post), so you don't want them to look the same.
+As mentioned above, CSS has a concept of classes.  CSS classes allow you to name part of the HTML and style only the parts you name. It's super helpful if you have two divs doing different things-- (like a header and a sidebar)-- you don't always want them to look the same.
 
-Go ahead and name some parts of the HTML code. Add a class called `page-header` to your `div` that contains your header, like this:
+Go ahead and name some parts of your HTML code. Add a class called `page-header` to the `div` containing your header, like this:
 
 ```html
     <div class="page-header">
@@ -179,7 +183,7 @@ Go ahead and name some parts of the HTML code. Add a class called `page-header` 
     </div>
 ```
 
-And now add a class `cat` to your `div` containing a cat description.
+And add a `cat` class to your cat-description `div` : 
 
 ```html
       <div class="cat">
@@ -196,7 +200,7 @@ And now add a class `cat` to your `div` containing a cat description.
 
 ```
 
-We will now add declaration blocks to different selectors. Selectors starting with `.` relate to classes. There are many great tutorials and explanations about CSS on the Web to help you understand the following code. For now, just copy and paste it into your `workspace/static/css/cat_shelter.css` file:
+Now we can add declaration blocks to style our selectors. Selectors starting with `.` relate to classes.  There are many great tutorials and explanations about CSS on the Web to help you understand the following code. For now, just copy and paste it into your `workspace/static/css/cat_shelter.css` file:
 
 ```css
     .page-header {
@@ -248,7 +252,7 @@ We will now add declaration blocks to different selectors. Selectors starting wi
     }
 ```
 
-Then surround the HTML code which displays the posts with declarations of classes. Replace this:
+Then add divs with classes to the HTML code which displays the cats. Replace this:
 
 ```html
     {% for cat in mycats %}
@@ -294,11 +298,8 @@ Save those files and refresh your website.
 
 ![Figure 14.4](images/final.png)
 
-Woohoo! Looks awesome, right? The code we just pasted is not really so hard to understand and you should be able to understand most of it just by reading it.
-
-Don't be afraid to tinker with this CSS a little bit and try to change some things. If you break something, don't worry, you can always undo it!
+Woohoo! Looks awesome, right? Don't be afraid to tinker with the CSS.  Try to change some things!  If you break something, don't worry--you can always undo it.
 
 Anyway, we really recommend taking this free online [Codeacademy HTML & CSS course](http://www.codecademy.com/tracks/web) as some post-workshop homework to learn everything you need to know about making your websites prettier with CSS.
 
 Ready for the next chapter?! :)
-
