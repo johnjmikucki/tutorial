@@ -14,7 +14,7 @@ It was written by programmers who worked for Twitter and is now developed by vol
 
 ## Link to Bootstrap ##
 
-To use Bootstrap, you need to add this to your `<head>` in your `.html` file (`cat_shelter/templates/blog/current_cats.html`):
+To use Bootstrap, you need to add this to your `<head>` in your `.html` file (`cat_shelter/templates/cat_shelter/current_cats.html`):
 
 ```
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -93,7 +93,7 @@ Then, we need to also tell our HTML template that we added some CSS. Open the `c
 Then, between the `<head>` and `</head>`, after the links to the Bootstrap CSS files add: 
 
 ```html
-<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+<link rel="stylesheet" href="{% static 'css/cat_shelter.css' %}">
 ```
 
 (Note: The browser reads the files in the order they're given, so we want to load our file after Bootstrap so we can  override parts of it.)
