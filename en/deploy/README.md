@@ -46,7 +46,7 @@ We need to tell Heroku which Python version we want to use. This is done by crea
 
     python-3.4.0
 
-## `critter_site/local_settings.py`cp 
+## `critter_site/local_settings.py`
 
 There is a difference between settings we are using locally (on our computer) and settings for our server. Heroku is using one database, and your computer is using a different database. That's why we need to create a separate file for settings that will only be available for our local environment.
 
