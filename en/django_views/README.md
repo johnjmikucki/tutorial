@@ -37,7 +37,8 @@ How?  Add a reference to your **application** URLs in your **site** URLs
 - Add a URL entry pointing to your cat_shelter.urls.  Use `r` to specify when the site should use that app.
   - To forward **all** requests to your app, use:
     - `url(r'', include('cat_shelter.urls')),`
-    - "If I get any request, look for instructions in the `cat_shelter` app."- To forward all requests starting with with `kitties` to the `cat_shelter` app, use:
+    - "If I get any request, look for instructions in the `cat_shelter` app."
+- To forward all requests starting with with `kitties` to the `cat_shelter` app, use:
     - `url(r'^kitties/', include('cat_shelter.urls')),`
     - "If I get a request like `http://127.0.0.1:8000/kitties/...`, look for instructions in the `cat_shelter` app."
 
