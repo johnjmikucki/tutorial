@@ -42,7 +42,7 @@ In your app's `urls.py` file...
 
 	urlpatterns = [
 	  url(r'^$', views.current_cats),
-	  url(r'^kitty/(?P<pk>[0-9]+/$'), views.cat_detail),
+	  url(r'^kitty/(?P<pk>[0-9]+)/$', views.cat_detail),
 	]
 
 ### Add the appropriate view function ##
@@ -62,6 +62,40 @@ How:
 		- `from django.shortcuts import render, get_object_or_404`
 	- Get the value from the database and pass it to the view just like we did in current_cats
 
+*Example*
+
+	def cat_details(request, pk):
+	  cat = get_object_or_404(Cat, pk=pk)
+	  return render(request, 'kitty/cat_detail.html', {'cat': cat})
+
+- Your detail view might look something like this:
+
+*Example*
+
+	<html>
+	  <head>
+	    <title>Kitty Kastle</title>
+	  </head>
+	  <body>
+	    <div>
+	      <h1><a href="">{{ cat.name }}</a></h1>
+	    </div>
+	
+	    <div>
+	        <p>Age: {{ cat.age }}</p>
+	        <p>Color: {{ cat.color }}</p>
+	        <p>Fluffy:
+	        {% if cat.fluffy %}
+	          OMG SO FLUFFY!
+	        {% else %}
+	          Nah
+	        {% endif %}</p>
+	        <p>{{ cat.desc|linebreaks}}</p>
+	    </div>
+	  </body>
+	</html>
+
+
 ### Create a template for the detail page ###
 Why: Now that we have a `Cat` object, we need a template in which to display its data!
 
@@ -77,3 +111,7 @@ How:
 	- Create and run the migrations
 		- Check out [Django Models](../django_models/README.md) for a reminder
 	- Work these new things into your view!
+
+- I added pictures!
+
+![Kitty!](images/crono.png)
