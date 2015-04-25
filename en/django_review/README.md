@@ -111,3 +111,7 @@ How:
 	- Create and run the migrations
 		- Check out [Django Models](../django_models/README.md) for a reminder
 	- Work these new things into your view!
+
+- I added pictures!
+
+![Kitty!](images/crono.png)
