@@ -42,7 +42,7 @@ In your app's `urls.py` file...
 
 	urlpatterns = [
 	  url(r'^$', views.current_cats),
-	  url(r'^kitty/(?P<pk>[0-9]+/$'), views.cat_detail),
+	  url(r'^kitty/(?P<pk>[0-9]+)/$', views.cat_detail),
 	]
 
 ### Add the appropriate view function ##
